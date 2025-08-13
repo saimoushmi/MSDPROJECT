@@ -1,0 +1,82 @@
+/* Reset some default styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Card container */
+.signup-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 350px;
+    text-align: center;
+}
+.signup-container h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.signup-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.signup-container button.signup-btn {
+    background-color: #14a800; /* Upwork green */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.signup-container button.signup-btn:hover {
+    background-color: #0e7a00;
+}
+
+.or-divider {
+    margin: 15px 0;
+    color: #888;
+    font-size: 14px;
+}
+
+.signup-container .social-btn {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: lightgray;
+    cursor: pointer;
+
+}
+
+.signup-container .social-btn:hover {
+    background: #f1f1f1;
+}
+
+.signup-container p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.signup-container a {
+    color: #14a800;
+    text-decoration: none;
+}
+
+.signup-container a:hover {
+    text-decoration: underline;
+}
