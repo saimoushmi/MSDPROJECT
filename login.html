@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - TalentNest</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+
+    .login-container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      width: 350px;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background: green;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .google-btn {
+      background: #4285f4;
+      margin-bottom: 10px; /* space below Google button */
+    }
+
+    .apple-btn {
+      background: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Log in to TalentNest</h2>
+    <input type="text" placeholder="Username or Email">
+    <button class="btn">Continue</button>
+    <p>or</p>
+    <button class="btn google-btn">Continue with Google</button>
+    <button class="btn apple-btn">Continue with Apple</button>
+  </div>
+</body>
+</html>
