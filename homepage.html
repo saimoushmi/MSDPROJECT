@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TalentNest - Coding Jobs</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #222;
+      color: white;
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00c4ff;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 15px;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li:hover {
+      color:lightblue;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .actions input {
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .login, .signup,.profile {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .login {
+      background: transparent;
+      color: white;
+      border: 1px solid white;
+    }
+
+    .login:hover {
+      background: #00c4ff;
+      border-color: #00c4ff;
+    }
+
+    .signup {
+      background: #00c4ff;
+      color:black;
+    }
+
+    .signup:hover {
+      background: #009cc7;
+    }
+    .profile {
+      background: #00c4ff;
+      color: black;
+    }
+
+    .profile:hover {
+      background: #009cc7;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4rem 5%;
+      gap: 2rem;
+      min-height: 80vh;
+      color: white;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+      z-index: -2;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: -1;
+    }
+
+    .hero .left {
+      max-width: 500px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero .highlight {
+      color: #00c4ff;
+    }
+
+    .hero p {
+      margin-bottom: 1.5rem;
+    }
+
+    .primary-btn {
+      background: #00c4ff;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .primary-btn:hover {
+      background: #009cc7;
+    }
+
+    .hero a {
+      display: inline-block;
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #00c4ff;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .hero a:hover {
+      color: #00e1ff;
+    }
+
+    .rating-card {
+      background: rgba(255,255,255,0.9);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      color: #333;
+      animation: floatCard 3s infinite ease-in-out;
+    }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* Services Section */
+    .services {
+      padding: 2rem 5%;
+      background: #fff;
+      text-align: center;
+    }
+
+    .services h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-8px);
+      background: #e6f7ff;
+    }
+
+    /* Trusted Brands Section */
+    .trusted {
+      text-align: center;
+      padding: 2rem 5%;
+      background: #f5f5f5;
+    }
+
+    .trusted p {
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    .brands {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .brand img {
+      width: 50px;
+      height: auto;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Job Count Section */
+    .job-count {
+      text-align: center;
+      padding: 1rem;
+      background: white;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #222;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">TalentNest</div>
+  <nav>
+    <ul>
+      <li>Find talent</li>
+      <li>Find work</li>
+      <li>Why Upwork</li>
+      <li>What's new</li>
+      <li>Enterprise</li>
+      <li>Pricing</li>
+    </ul>
+  </nav>
+  <div class="actions">
+    <input type="text" placeholder="Search" />
+    <button class="login" onclick="window.location.href='login.html'">Log in</button>
+    <button class="signup" onclick="window.location.href='signup.html'">Sign up</button>
+    <button class="profile" onclick="window.location.href='profile.html'">Profile</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="left">
+      <h1>Find the best <span class="highlight">Coding</span> jobs</h1>
+      <p>It takes just one job to develop a successful relationship that can propel your career forward.</p>
+      <button class="primary-btn">Find work</button>
+      <a href="#">Interested in hiring?</a>
+    </div>
+    <div class="right">
+      <div class="rating-card">
+        <p>Professionals on Upwork rate clients</p>
+        <div class="stars">⭐⭐⭐⭐⭐ <span>4.5/5</span></div>
+        <p>on average from 1M+ reviews</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <h3>Our Services</h3>
+    <div class="service-grid">
+      <div class="service">
+        <h4>Post a Job</h4>
+        <p>Reach thousands of skilled freelancers ready to help.</p>
+      </div>
+      <div class="service">
+        <h4>Browse Freelancers</h4>
+        <p>View freelancer profiles, portfolios, and reviews.</p>
+      </div>
+      <div class="service">
+        <h4>Secure Payments</h4>
+        <p>Pay safely through our secure payment system.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="trusted">
+    <p>Trusted by</p>
+    <div class="brands">
+      <div class="brand">
+        <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft Logo">
+        <span>Microsoft</span>
+      </div>
+      <div class="brand">
+        <img src="https://logo.clearbit.com/airbnb.com" alt="Airbnb Logo">
+        <span>Airbnb</span>
+      </div>
+      <div class="brand">
+        <img src="https://logo.clearbit.com/automattic.com" alt="Automattic Logo">
+        <span>Automattic</span>
+      </div>
+      <div class="brand">
+        <img src="https://logo.clearbit.com/bissell.com" alt="Bissell Logo">
+        <span>Bissell</span>
+      </div>
+      <div class="brand">
+        <img src="https://logo.clearbit.com/glassdoor.com" alt="Glassdoor Logo">
+        <span>Glassdoor</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="job-count">
+    <p>Check out a sample of the <strong>6,219 Coding jobs</strong> posted on Upwork</p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 TalentNest. All rights reserved.</p>
+</footer>
+
+<script>
+  document.querySelector('.primary-btn').addEventListener('click', () => {
+    alert("Redirecting to job listings...");
+  });
+</script>
+
+</body>
+</html>
